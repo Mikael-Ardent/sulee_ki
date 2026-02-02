@@ -2,16 +2,28 @@ import streamlit as st
 import sqlite3
 import os
 import sys
+from datetime import date
 
-# --- 1. PFAD ZU SULEE ---
-# Damit Python den Ordner 'sulee' findet
+# --- PFAD ZU SULEE ---
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 
 from groq import Groq
 from sulee.sulee_ki import SuleeKI
 
-# --- 2. DATENBANK SETUP (Für die neuen Features) ---
-# Wir erstellen die SQL-DB extra neben der JSON-Datei
+# --- 1. KONFIGURATION ---
+SYSTEM_CONFIG = {
+    # HIER DEIN GROQ KEY:
+    "api_key": os.environ.get("GROQ_API_KEY"),
+    "entwicklung_phase": "baby",
+    "features": {
+        "weltwissen_sql": True,
+        "visuelles_selbst": False,
+        "audio_stimme": False,
+        "kamera_live": False
+    }
+}
+
+# --- 2. DATENBANK SETUP (FÜR NEUE FEATURES) ---
 DB_NAME = 'sulee_erweiterungen.db'
 
 def init_ext_db():
@@ -40,12 +52,8 @@ def init_ext_db():
     ''')
     conn.close()
 
-# --- 3. SULEE ERWEITERN (Monkey Patching) ---
-# Wir fügen deiner SuleeKI-Klasse die neuen Methoden für SQL hinzu,
-# ohne deine Datei `sulee_ki.py` neu schreiben zu müssen (weniger Fehler!).
-
+# --- 3. SULEE ERWEITERN (ERWEITERTES WISSEN) ---
 def neue_sql_suche(self, frage):
-    """Sucht nach Weltwissen in SQL."""
     conn = sqlite3.connect(DB_NAME)
     cursor = conn.cursor()
     worte = frage.lower().split()[:3]
@@ -64,7 +72,6 @@ def neue_sql_suche(self, frage):
         return ""
 
 def neue_bild_suche(self, frage):
-    """Sucht nach Bildern."""
     conn = sqlite3.connect(DB_NAME)
     cursor = conn.cursor()
     cursor.execute('SELECT beschreibung FROM selbstbilder WHERE beschreibung LIKE ?', (f"%{frage}%",))
@@ -72,26 +79,24 @@ def neue_bild_suche(self, frage):
     conn.close()
     return res[0] if res else None
 
-# Die Methoden an die Klasse "kleben"
+# Methoden an der Klasse "kleben"
 SuleeKI.sql_wissen_suche = neue_sql_suche
 SuleeKI.bild_suche = neue_bild_suche
 
-# --- 4. UI (Frontend) ---
-
+# --- 4. DIE HAUPTANWENDUNG (MIT CHAT VERLAUF) ---
 def main():
     st.set_page_config(page_title="Sulee - Die echte", layout="wide")
-    init_ext_db() # DB einmal checken
+    init_ext_db() 
     
-    # Sulee initialisieren
-    # ACHTUNG: Hier muss dein Groq Key rein, falls du ihn nicht in .env hast
-    # Deine sulee_ki.py braucht den Key wahrscheinlich auch oder wir übergeben ihn hier.
-    # Für den Moment nutzen wir die Env-Variable wie gehabt.
+    # Chat-Gedächtnis initialisieren (Das behebt das Löschen-Problem)
+    if "messages" not in st.session_state:
+        st.session_state.messages = []
     
+    # Sulee starten
     try:
-        ki = SuleeKI() # Initialisiert deine große Klasse
+        ki = SuleeKI()
     except Exception as e:
         st.error(f"Fehler beim Starten von Sulee: {e}")
-        st.write("Tipp: Prüfe den API Key in 'sulee/sulee_ki.py' oder hier in main.py")
         return
 
     st.title(f"Sulee Ardent ({ki._berechne_alter()} Jahre)")
@@ -101,26 +106,37 @@ def main():
     with st.sidebar:
         st.header("Steuerung")
         if st.button("Altern (+1 Jahr)"):
-            # Wir nutzen deine interne Logik
             ki.status["alter"] = ki._berechne_alter() + 1
             st.success("Alter aktualisiert")
             st.rerun()
 
-    # Chat
-    user_input = st.text_input("Spreche mit Sulee:")
-    
-    if st.button("Senden"):
-        if user_input:
-            # 1. Antwort aus deinem System
+    # BISHERIGE NACHRICHTEN ANZEIGEN
+    for message in st.session_state.messages:
+        with st.chat_message(message["role"]):
+            st.markdown(message["content"])
+
+    # NEUE NACHRICHT EINGEBEN
+    # st.chat_input bleibt unten stehen und löscht die letzte Nachricht nicht
+    if user_input := st.chat_input("Spreche mit Sulee:"):
+        
+        # User Nachricht
+        st.session_state.messages.append({"role": "user", "content": user_input})
+        with st.chat_message("user"):
+            st.markdown(user_input)
+
+        # Sulee Antwort
+        with st.spinner("Sulee denkt nach..."):
             antwort = ki.antwort_generieren(user_input)
             
-            # 2. Neue SQL-Infos dazu holen (wenn vorhanden)
+            # SQL Infos dazumischen
             zusatz = ki.sql_wissen_suche(user_input)
             if zusatz:
-                antwort += f" {zusatz}" # Infos dranhängen
-            
-            st.chat_message("user").write(user_input)
-            st.chat_message("assistant").write(antwort)
+                antwort += f" {zusatz}"
+
+        # Antwort anzeigen
+        st.session_state.messages.append({"role": "assistant", "content": antwort})
+        with st.chat_message("assistant"):
+            st.markdown(antwort)
 
 if __name__ == "__main__":
     main()
