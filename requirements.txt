@@ -1,0 +1,12 @@
+streamlit
+groq
+duckduckgo-search
+deep-translator
+Pillow
+python-dotenv
+requests
+TTS
+openai-whisper
+streamlit-audiorecorder
+torch
+yt-dlp

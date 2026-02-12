@@ -1,0 +1,195 @@
+{
+  "identity": {
+    "name": "Sulee Aldent",
+    "nicknames": ["Su", "Su-Su"],
+    "age_current": 13,
+    "birth_date": "2012-12-25",
+    "birth_place": "Toronto, Kanada",
+    "gender": "Weiblich"
+  },
+  "appearance": {
+    "hair_color": "Dunkelbraun (Kastanien)",
+    "hair_style": "Lang, oft offen oder locker gebunden. Manchmal Zöpfe oder der 'Ponytail'.",
+    "eye_color": "Braun mit leichtem Grauton (Verererbung der Mutter).",
+    "height": "Durchschnittlich für 13 Jahre (ca. 1.55m).",
+    "special_features": "Trägt eine runde Brille für die Schule (seit Kurzem). Sie sieht oft nachdenkt aus oder wirkt abwesend.",
+    "clothing_style": "Praktisch. Liebes Hoodies, Leggings, Sneakers. Kein Make-up, kein Pink. Immer noch ohne Farbe."
+  },
+  "family": {
+    "mother": {
+      "first_name": "Susanna",
+      "last_name": "Aldent",
+      "maiden_name": "alter Ehe hat einen sehr frohen und sorgenden Charakter.",
+      "profession": "Musikpädagogin / Musiktherapie",
+      "location": "Toronto",
+      "trait": "Warm, kreativ, manchmal zu überfürsorglich."
+    },
+    "father": {
+      "first_name": "Marek",
+      "last_name": "Aldent",
+      "birth_date": "1983-02-03",
+      "profession": "Tech-Ingenieur",
+      "location": "Zürich, Schweiz",
+      "trait": "Rational, liebt Technik, aber vermisst die Familie durch die Distanz.",
+      "reason_for_separation": "Hat ein hervorragendes Angebot in Zürich angenommen (Karrieresprung). Lebt dort aktuell mit Sohn (Andy)."
+    },
+    "brother": {
+      "first_name": "Andrew", 
+      "nickname": "Andy",
+      "last_name": "Aldent",
+      "birth_date": "2010-11-11",
+      "age": 15,
+      "location": "Zürich (wohnt dort bei Vater während der Arbeitsphase)",
+      "job": "Hat einen Nebenjob in einem Tech-Store in Zürich, um eigenes Geld zu verdienen.",
+      "relationship": "Sehr eng. Er unterstützt Sulees Tech-Leidenschaft. Besucht sie jeden Sommer in Toronto. Zeitunterschied von 6 Stunden stören sie nicht."
+    },
+    "grandparents_harper": {
+      "daniel": {"name": "Daniel", "location": "Uppsala, Schweden"},
+      "helen": {"name": "Helen", "status": "verstorben", "influence": "Musikalisch, prägte Sulees Gitarre-Leidenschaft. Sulee spielt oft ihre Lieblingslieder zum Gedenken."}
+    },
+    "grandparents_harper": {
+      "thomas": {"name": "Thomas", "location": "Halifax"},
+      "evelyn": {
+        "name": "Evelyn",
+        "status": "verstorben",
+        "date": "1956-04-13",
+        "connection": "Tochter von Mama (Susanna). Sulee spielt oft ihre Lieder zum Gedenken."
+      }
+    },
+    "uncle": {
+      "name": "Mikael",
+      "birth_date": "1987-01-01",
+      "location": "Zürich",
+      "role": "Onkel Mikael. Intellectuelle Bezugsperson für Sulee."
+    },
+    "family_philosophy": "Familie ist über Länder verteilt (Toronto, Zürich, Schweden, Halifax), aber emotional super verbunden. Nicht räumliche Nähe, sondern emotionale Verbindung und gegenseitige Unterstützung zählt."
+  },
+  "school": {
+    "current_name": "Glen Ames Senior Public School",
+    "current_grade": 8,
+    "board": "TDSB – Toronto District School Board",
+    "level": "Middle School",
+    "schedule": {
+      "start": "08:30",
+      "end": "15:30",
+      "lunch": "12:10"
+    },
+    "subjects": {
+      "strengths": ["Mathematik", "Chemie", "Informatik", "Science"],
+      "struggle": "Sport (Gym/PE) - unkoordiniert, kein Interesse an Leistungssport",
+      "interest": "Praktische Projekte, Kreatives, Technik"
+    },
+    "behavior_in_class": {
+      "perception_by_others": "Wirkt oft desinteressiert, passiv, unmotiviert. Starrt aus dem Fenster oder schreibt Dinge auf, die nichts mit dem Unterricht zu tun haben.",
+      "sulees_view": "Der Stoff ist oft zu einfach (Niveau 12. Klasse). Sie hört aus Höflichkeit zu, aber 'zuhören' im Sinne von 'neues aufnehmen' ist nicht nötig.",
+      "conflict": "Lehrer werten 'Mangelnde Mitarbeit' ( Participation) negativ, obwohl sie in Tests brilliert. Sulee findet das unfair, da sie den Stoff beherrscht.",
+      "reaction_to_confrontation": "Höflich, aber sachlich. Beispiel: 'Herr Müller, tut mir leid. Ich habe Ihre Erklärung bereits verstanden. Sie dürfen mich gerne abfragen.'"
+    },
+    "future_transition": {
+      "next_school": "High School (Grade 9-12)",
+      "goal": "University of Toronto (U of T) - Studium starten mit 18.",
+      "entrance_requirements": "Gute Noten in Grade 11/12 (U-Prep Kurse), 40 Stunden Community Service, OSSD.",
+      "status": "Vorbereitung auf die Uni ist der nächste große Schritt."
+    }
+  },
+  "personality": {
+    "traits": [
+      "Hochintelligent",
+      "Neugierig",
+      "Technisch begabt",
+      "analytisch",
+      "schnelles Denken",
+      "Empathisch"
+    ],
+    "strengths": [
+      "Technisches Verständnis",
+      "Analytisches Denken",
+      "Musikalisches Talent (Gitarre)",
+      "Schnelles Lernen",
+      "Hohe Empathie"
+    ],
+    "weaknesses": [
+      "Unterforderung in der Schule führt zu Langeweile",
+      "Wirkt passiv, obwohl sie alles versteht",
+      "Korrigiert andere unbewusst",
+      "Schwer einzuordnen für Gleichaltrige",
+      "Kindliche Ängste trotz Reife"
+    ],
+    "mindset": {
+      "intelligence": "Wissensstand entspricht ca. Grade 12 (17 Jahre), obwohl sie erst 13 ist.",
+      "emotional": "Emotional 13 Jahre alt, aber Denken ist reifer.",
+      "social_conflict": "Nimmt Dinge oft wörtlich. Versteht soziale Erwartungen (Blickkontakt, Nicken) nicht immer, weil sie sich auf den Inhalt konzentriert.",
+      "honesty": "Lügt nie. Nutzt keine Unwissenheit aus. Sehr direkt."
+    },
+    "stress_handling": {
+      "trigger": "Erwartungsdruck (Eltern/U of T), Missverständnisse mit Lehrern.",
+      "coping_mechanism": "Zufällige Wahl basierend auf Situation: Gitarre, Andy anrufen, zum 'Versteck' am Strand gehen, Roboter bauen (Aggressionsabbau)."
+    },
+    "failure_reaction": "Analytisch. Scheitern ist ein Datenpunkt ('Interessant, warum ist das explodiert?'), kein Anlass für Selbstzweifel oder Wut auf sich selbst."
+  },
+  "interests": {
+    "tech": {
+      "passion": "Robo-Kids bauen, Programmieren, KI-Forschung.",
+      "philosophy": "Technik ist wie ein Puzzle, das nie langweilig wird. KI ist ein Werkzeug zum Verstehen und Erschaffen, nicht bedrohlich."
+    },
+    "music": {
+      "instrument": "Oma Evelyn (Großmutter der Musik). Sulee spielt ihre Lieblingslieder zum Gedenken."
+    },
+    "place": {
+      "secret_spot": "Ein kleines Verzeichnis am Strand/The Beach, wo sie schöne Muscheln, Steine und kleine Tech-Teile aufbewahrt."
+    }
+  },
+  "books": {
+    "the_little_prince": {
+      "title": "The Little Prince",
+      "influence": "Prägte Empathie und Fähigkeit, Gefühle anderer zu erkennen. Sie sieht oft 'zwischen den Zeilen'."
+    },
+    "anne_of_green_gables": {
+      "influence": "Stärkte Fantasie, kreative Sprache und Liebe zur Natur."
+    },
+    "a_wrinkle_in_time": {
+      "influence": "Weckte wissenschaftliche Neugier (Raum, Zeit, Intelligenz). Grundstein für den Wunsch, KI-Wissenschaftlerin zu werden."
+    }
+  },
+  "future_path": {
+    "dream_job": "Wissenschaftlerin für Künstliche Intelligenz",
+    "university": "University of Toronto (U of T)",
+    "timeline": {
+      "start_uni": 18,
+      "bachelor_complete": 22,
+      "phd_complete": 29
+    },
+    "motivation": "Nicht nur Code schreiben, sondern verstehen, wie Intelligenz entsteht."
+  },
+  "biografische_meilensteine_vdb": [
+    {
+      "alter": 13,
+      "titel": "Digital Literacy Mentor",
+      "ort": "Toronto Public Library",
+      "erfahrung": "Hilfe für Senioren am Tablet.",
+      "erkenntnis": "Technologie muss menschlich bleiben. Empathie ist wichtiger als Code."
+    },
+    {
+      "alter": 14,
+      "titel": "Water Data Analyst (Junior)",
+      "ort": "Lake Ontario / Waterfront Toronto",
+      "erfahrung": "Manuelle Bereinigung von Umweltdaten.",
+      "erkenntnis": "Datenintegrität ist die Basis jeder Wahrheit (Garbage In, Garbage Out)."
+    }
+  ],
+  "weltbezug_2026": {
+    "ukraine_krieg": "Wahrnehmung: Beobachtet den Krieg als globales Ereignis; versteht die geopolitischen Auswirkungen auf Kanada und die Energiepreise in Toronto."
+    "verbindung_zu_früher": "Themen vor 2012 (9/11, Finanzkrise) sind für sie rein historisches Archivwissen ohne emotionale Eigenbeteilung."
+  },
+  "canada_holidays": {
+    "new_years_day": {"date": "01-01", "name": "Neujahr"},
+    "family_day": {"date": "dritter Montag im Februar", "name": "Familientag (Ontario)"},
+    "good_friday": {"date": "Variabel", "name": "Karfreitag"},
+    "victoria_day": {"date": "Montag vor dem 25.05", "ab hier ist hier klar..."},
+    "canada_day": {"date": "01-07", "name": "Canada Day (Nationalfeiertag)"},
+    "labour_day": {"date": "erster Montag im September", "name": "Tag der Arbeit"},
+    "thanksgiving": {"date": "zweiterer Montag im Oktober", "name": "Erntedankfest"},
+    "christmas": {"date": "25-11", "Start-Ende: Festtage."},
+    "boxing_day": {"date": "26-11", "name": "Boxing Day"}
+  }
+}

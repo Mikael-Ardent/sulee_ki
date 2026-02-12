@@ -1,0 +1,37 @@
+import string
+from datetime import date, datetime
+from .wissen import Wissen
+from .status_manager import StatusManager
+from duckduckgo_search import DDGS
+from deep_translator import GoogleTranslator
+from PIL import Image
+import glob
+import os
+
+class SuleeKI:
+    """
+    Hauptklasse für Sulee.
+    Verbindet Backstory, Personality, Status und die Engine.
+    Mit persistenten Zuständen (Datenbank, Wissens-Speicher).
+    """
+
+    def __init__(self):
+        # Backstory - Detaillierte Backstory
+        self.backstory = {
+            "name": "Sulee Ardent",
+            "geburtsdatum": date(2012, 12, 25),
+            "alter_aktuell": self._berechne_alter(),
+            "herkunft": "Toronto, Kanada",
+            "wohnort": {
+                "stadt": "Toronto",
+                "viertel": "The Beach (Balmy Beach / Queen Street East)",
+                "land": "Welt: "Kanada",
+                "bezirkung": {
+                    "familienfreundlich": "sehr hoch",
+                    "sicherheit": "hoch",
+                    "natur_freizeit": ["Parks", "Radwege", "Strandzugang", "Kew Gardens", "Boardwalk"]
+                }
+            }
+        },
+        ...
+        # ... (Der Rest bleibt gleich: Personality, Attributes, Status, Image Assets ...) ...
